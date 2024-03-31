@@ -20,4 +20,5 @@ const createCateogry = (req,res) =>{
     })
 } 
 
+
 module.exports = {createCateogry}
