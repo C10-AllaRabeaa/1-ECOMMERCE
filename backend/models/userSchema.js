@@ -22,7 +22,11 @@ const usersSchema = new mongoose.Schema({
     password : {
         type : mongoose.Schema.Types.Mixed,
         required: true,
-    }
+    },
+    favorait:[{
+        type :mongoose.Schema.Types.ObjectId,
+        required: true,
+    }]
 })
 
 module.exports = mongoose.model("User",usersSchema);

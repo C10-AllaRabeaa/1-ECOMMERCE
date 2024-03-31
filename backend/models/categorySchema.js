@@ -3,11 +3,14 @@ const mongoose = require("mongoose");
 const categorySchema = new mongoose.Schema({
   title:
   {
-    type: String
+    type: String,
+    required: true,
+
   },
 
   image: {
-    type: Stringe
+    type: String,
+    required: true,
   },
 
 });

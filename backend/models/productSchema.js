@@ -15,23 +15,23 @@ const productSchema = new mongoose.Schema({
     {
         type: String,
     },
-    colorsProduct: {
+    colorsProduct: [{
         type: String,
-    },
-    sizeProduct: {
+    }],
+    sizeProduct: [{
         type: Number,
-        required: true,
-    },
+        
+    }],
     nameBrand: {
         type: String,
     },
     producingCountry: {
         type: String,
     },
-    category: [{
+    category: {
         type : mongoose.Schema.Types.ObjectId,
         ref: "category"
-    }],
+    },
 
 })
 
