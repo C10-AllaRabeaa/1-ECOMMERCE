@@ -20,5 +20,26 @@ const createCateogry = (req,res) =>{
     })
 } 
 
+const getAllCategory = (req,res)=>{
+    categoryModel.find()
+    .then((result) => {
+        console.log(result);
+        res.status(200)
+        res.json({
+          success: true,
+          message: "All the Category",
+          User: result
+        })
+      })
+      .catch((error) => {
+        res.status(500)
+        res.json({
+          success: false,
+          message: "Server Error",
+          error: error
+        })
+      })
+}
 
-module.exports = {createCateogry}
+
+module.exports = {createCateogry,getAllCategory}

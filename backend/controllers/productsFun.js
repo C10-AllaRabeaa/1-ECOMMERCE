@@ -19,4 +19,37 @@ const creatProduct = (req, res) => {
     })
 }
 
-module.exports = {creatProduct}
+const getProductByCategory = (req,res)=>{
+const categoryId = req.query.category
+
+ProductModel.find({category : categoryId})
+
+.then((category) => {
+    console.log("result with categoryId >>", category);
+    if (category.length > 0) {
+      res.status(200)
+      res.json({
+        success: true,
+        message: "All the category for the category: ${categoryId}",
+        category: category
+      })
+    } else {
+      res.status(404)
+      res.json({
+        success: false,
+        message: "The category => ${categoryId} has no category"
+      })
+    }
+  })
+  .catch((error) => {
+    res.status(500)
+    res.json({
+      success: false,
+      message: "Server Error",
+      error: error.message
+    })
+  })
+
+}
+
+module.exports = {creatProduct,getProductByCategory}

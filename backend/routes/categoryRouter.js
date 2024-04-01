@@ -2,10 +2,11 @@ const express = require("express")
 
 const cateogryRouter = express.Router()
 
-const {createCateogry} = require('../controllers/categoryFun')
+const {createCateogry,getAllCategory} = require('../controllers/categoryFun')
 
 
-cateogryRouter.get('/',createCateogry)
+cateogryRouter.post('/',createCateogry)
+cateogryRouter.get("/allcategory",getAllCategory)
 
 module.exports = cateogryRouter
 
