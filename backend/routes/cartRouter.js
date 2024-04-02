@@ -1,6 +1,6 @@
 const express = require("express")
 
-const cateogryRouter = express.Router()
+const cartRouter = express.Router()
 
 const authentication = require('../middleware/authentication')
 
@@ -14,7 +14,7 @@ const {createCateogry,getAllCategory,} = require('../controllers/categoryFun')
 cateogryRouter.post('/',authorization,createCateogry)
 cateogryRouter.get("/allcategory",authentication,getAllCategory)
 
-module.exports = cateogryRouter
+module.exports = cartRouter
 
 
 

@@ -127,7 +127,7 @@ const deleteProductById = (req, res) => {
     const delteIdProduct = req.params.id;
     ProductModel.findByIdAndDelete(delteIdProduct)
         .then((article) => {
-            res.status(200)
+            res.status(202)
             res.json({
                 success: true,
                 message: "Product Deleted ",
@@ -135,7 +135,7 @@ const deleteProductById = (req, res) => {
             })
         })
         .catch((error) => {
-            res.status(500)
+            res.status(204)
             res.json({
                 success: false,
                 message: "Server Error",

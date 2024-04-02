@@ -24,11 +24,7 @@ const usersSchema = new mongoose.Schema({
     password : {
         type : mongoose.Schema.Types.Mixed,
         required: true,
-    },
-    favorait:[{
-        type :mongoose.Schema.Types.ObjectId,
-        required: true,
-    }]
+    }
 })
 
 usersSchema.pre("save", async function(){

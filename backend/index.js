@@ -20,7 +20,8 @@ const roleRouter = require("./routes/roleRouter")
 
 
 // import Category Router
-const cateogryRouter =require("./routes/categoryRouter")
+const cateogryRouter =require("./routes/categoryRouter");
+const cartRouter = require("./routes/cartRouter");
 
 
 const PORT = process.env.PORT || 5000;
@@ -42,6 +43,7 @@ app.use("/product",productRouter)
 app.use("/role",roleRouter)
 
 app.use("/category",cateogryRouter)
+app.use('/cart',cartRouter)
 
 
 
