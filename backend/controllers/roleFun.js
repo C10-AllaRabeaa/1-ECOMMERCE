@@ -13,7 +13,8 @@ const createRole = (req,res) =>{
     .then((result)=>{
         console.log(result);
         res.status(200)
-        res.json("The Specific Role of this User")
+        
+        res.json("The Specific Role of this User",newRoler)
     }).catch((error)=>{
         res.status(401)
         res.json({error : error})

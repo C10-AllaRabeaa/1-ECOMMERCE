@@ -11,7 +11,7 @@ const authorization = require('../middleware/authorization')
 const {createCateogry,getAllCategory,} = require('../controllers/categoryFun')
 
 
-cateogryRouter.post('/',authorization,createCateogry)
+cateogryRouter.post('/',authentication,authorization,createCateogry)
 cateogryRouter.get("/allcategory",authentication,getAllCategory)
 
 module.exports = cateogryRouter

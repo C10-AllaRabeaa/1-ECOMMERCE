@@ -7,6 +7,6 @@ const authorization = require('../middleware/authorization')
 const {createRole} = require("../controllers/roleFun")
 
 
-roleRouter.get('/',authorization,createRole)
+roleRouter.post('/',createRole)
 
 module.exports = roleRouter

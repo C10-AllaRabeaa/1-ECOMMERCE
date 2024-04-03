@@ -36,6 +36,7 @@ app.use("*", (req, res) => res.status(404).json("NO content at this path"));
 
 
 
+
 app.use("/user",userRouter)
 
 app.use("/product",productRouter)
@@ -43,8 +44,8 @@ app.use("/product",productRouter)
 app.use("/role",roleRouter)
 
 app.use("/category",cateogryRouter)
-app.use('/cart',cartRouter)
 
+//app.use('/cart',cartRouter)
 
 
 app.listen(PORT, () => {

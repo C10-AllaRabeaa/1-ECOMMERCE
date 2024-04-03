@@ -7,30 +7,39 @@ const usersSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    lastName : {
+    lastName: {
         type: String,
     },
-    age : {
-        type: Number, 
+    age: {
+        type: Number,
     },
-    country : {
-        type: String, 
+    country: {
+        type: String,
     },
-    email : {
+    email: {
         type: String,
         required: true,
-        unique : true,
+        unique: true,
     },
-    password : {
-        type : mongoose.Schema.Types.Mixed,
+    password: {
+        type: mongoose.Schema.Types.Mixed,
         required: true,
+    },
+    favoratie: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: ("Product")
+    }],
+
+    role :{
+      type : mongoose.Schema.Types.ObjectId,
+      ref : ("Role")  
     }
 })
 
-usersSchema.pre("save", async function(){
+usersSchema.pre("save", async function () {
     this.email = this.email.toLowerCase();
-    this.password = await bcryptjs.hash(this.password,10);
+    this.password = await bcryptjs.hash(this.password, 10);
     console.log(`email : ${this.email},password : ${this.password}`);
 })
 
-module.exports = mongoose.model("User",usersSchema);
+module.exports = mongoose.model("User", usersSchema);

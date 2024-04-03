@@ -1,4 +1,4 @@
-const express = require("express")
+/*  const express = require("express")
 
 const cartRouter = express.Router()
 
@@ -14,7 +14,7 @@ const {createCateogry,getAllCategory,} = require('../controllers/categoryFun')
 cateogryRouter.post('/',authorization,createCateogry)
 cateogryRouter.get("/allcategory",authentication,getAllCategory)
 
-module.exports = cartRouter
+module.exports = cartRouter  */
 
 
 
