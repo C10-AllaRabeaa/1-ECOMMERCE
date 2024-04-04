@@ -12,9 +12,9 @@ userRouter.post('/register',creatUser);
 userRouter.get('/allusers',getAllUsers);
 userRouter.post("/login",login)
 
-userRouter.put("/add/favoratie/:id",updateUserById)
+userRouter.put("/add/favoratie/:id",authentication,updateUserById)
 
-userRouter.delete("/delate/favoratie/:id",delateUserById)
+userRouter.delete("/delate/favoratie/:id",authentication,delateUserById)
 
 
 

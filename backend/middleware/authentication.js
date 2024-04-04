@@ -2,9 +2,9 @@ const jwt = require("jsonwebtoken")
 
 
 const authentication =async (req,res,next) =>{
-    console.log(req.header.authentication);
-    if(req.header.authentication){
-        const token = req.header.authentication.split(" ").pop();
+    console.log(req.headers.authorization);
+    if(req.headers.authorization){
+        const token = req.headers.authorization.split(" ").pop();
         try {
             const verify = await jwt.verify(token,process.env.SECRET)
             console.log("verify",verify);

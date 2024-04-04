@@ -7,14 +7,13 @@ const creatUser = (req, res) => {
     console.log(req.body);
 
 
-    const { firstName, lastName, age, country, email, password,favoratie,role, } = req.body
+    const { firstName, lastName, age, country, email, password,favoratie } = req.body
 
     const newUser = new userModel({
-        firstName, lastName, age, country, email, password,favoratie,role
+        firstName, lastName, age, country, email, password,favoratie,role :"660dbaa9c28cf4985bd484c2"
     })
     console.log(newUser);
     newUser.save()
-    //.populate("role")
         .then((result) => {
             console.log(result);
             res.status(200)
@@ -76,6 +75,8 @@ const login = (req, res) => {
                     const userToken = jwt.sign(payload, process.env.SECRET, options)
 
                     res.json({ message: "welcome to the website and You are logged in", token: userToken });
+                    console.log(userToken);
+                    console.log(payload);
                 }
             }
             catch (error) {
@@ -90,17 +91,18 @@ const login = (req, res) => {
 
 
 
-// use push for delet user By id 
+// use push for delet user By id
+// before in router dont for get authentication 
 const updateUserById = (req, res) => {
     const favoratieid = req.params.id
-    const userid = req.token.userId;
-
+    const userId = req.token.id;
+ console.log(req.token);
     userModel.findByIdAndUpdate(
-        { _id: userid },
+         {_id : userId },
         { $push: { favoratie: favoratieid } },
         { new: true }
     )
-        .then(() => {
+        .then((result) => {
             res.status(201).json({
                 success: true,
                 message: `Comment added`,
@@ -108,21 +110,22 @@ const updateUserById = (req, res) => {
             });
         })
         .catch((error) => {
+            console.log(error);
             res.status(500).json({
                 success: false,
                 message: `Server Error`,
-                err: err.message,
+                err: error.message,
             });
         })
 };
 
 
 // use pull for delet user By id 
-
+// before in router dont for get authentication
 const delateUserById = (req, res) => {
     console.log("teset");
     const favoratieid = req.params.id
-    const userid = req.token.userId;
+    const userid = req.token.id;
     
     userModel.findByIdAndUpdate(
         { _id: userid },

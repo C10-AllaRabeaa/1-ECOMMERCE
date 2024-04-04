@@ -25,9 +25,9 @@ module.exports = productRouter
  //hedar.token ما تنسى authentication
 
 
-
-
-
+//authentication,authorization ("text")
+//chek user in login authentication
+//user or admin  authorization (permation)
 
 
 
