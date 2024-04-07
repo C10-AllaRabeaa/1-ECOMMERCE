@@ -1,7 +1,10 @@
 import React, {  useState } from "react"
 import axios from "axios"
+import { useNavigate } from "react-router-dom";
 
 const Register = () =>{
+
+const navigateLogin = useNavigate();
 
     const [message,setMessage]= useState()
     const [firstName, setFirstName] = useState()
@@ -13,19 +16,21 @@ const Register = () =>{
 
 
     const submited = () => {
-        const data = { firstName, lastName, email, password, age, country }
+        const data = {firstName, lastName, age, country, email, password}
 
-        axios.post('http://localhost:5000/users/register', data)
+        axios.post('http://localhost:5000/user/register', data)
         .then((result) => {
             setMessage (result.data.message)
+            navigateLogin("/Login")
         }).catch((error) => {
+            console.log((error));
             setMessage(error.response.data.message)
         })
     }
 
     return(
         <div className="inputRegister">
-        <p>Register:</p>
+        <p>Create a new account :</p>
         <input type="text" placeholder="First Name" onChange={(e) => {
             setFirstName(e.target.value)
         }}></input>

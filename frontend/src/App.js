@@ -4,8 +4,8 @@ import "./App.css";
 import Navbar from './components/Navbar';
 import Register from './components/Register';
 import Login from './components/Login';
-import Dashbord from './components/Dashboard';
-
+import Home from './components/Home';
+import Test from './components/Test';
 
 import { Routes, Route, Link } from 'react-router-dom';
 
@@ -25,8 +25,9 @@ const App = () => {
       
       <Routes>
       <Route path='/Register' element={<Register />} />
-      <Route path='/Login' element={<Login />} />
-      <Route path='/Dashbord' element={<Dashbord />} />
+      <Route path='/Test' element={<Test />} />
+      <Route path='/Home' element={<Home />} />
+      
       
       </Routes>
     </UserContex.Provider>
