@@ -19,6 +19,7 @@ const creatUser = (req, res) => {
             res.status(200)
             res.json("Successfully registered a new user")
         }).catch((error) => {
+            console.log(error);
             res.status(401)
             res.json({ error: error })
         })
