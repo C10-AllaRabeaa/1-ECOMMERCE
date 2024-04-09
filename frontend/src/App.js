@@ -5,7 +5,8 @@ import Navbar from './components/Navbar';
 import Register from './components/Register';
 import Login from './components/Login';
 import Home from './components/Home';
-import Test from './components/Test';
+import Product from './components/Product'
+import Data from './components/Data/Data';
 
 import { Routes, Route, Link } from 'react-router-dom';
 
@@ -25,9 +26,10 @@ const App = () => {
       
       <Routes>
       <Route path='/Register' element={<Register />} />
-      <Route path='/Test' element={<Test />} />
+      <Route path='/Login' element={<Login />} />
       <Route path='/Home' element={<Home />} />
-      
+      <Route path='/product/:id' element={<Product />} />
+      <Route path='/data/:id' element={<Data />} />
       
       </Routes>
     </UserContex.Provider>

@@ -1,15 +1,40 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, { useState, useEffect } from "react"
 import axios from "axios";
-import { UserContex } from "../../App";
 
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
 
+const [itemCategory, setItemCategory]= useState()
+
+const navgate = useNavigate();
+
+    useEffect(()=>{
+        axios.get('http://localhost:5000/category/allcategory')
+        .then((result)=>{
+            //console.log(result.data.category);
+            setItemCategory(result.data.category);
+        })
+        .catch((error)=>{
+            console.log(error);
+
+        })
+    });
+
     return (
         <div>
-        <h1>Hello</h1>
+        
             <div>
-            <img hrf="" />
+            {itemCategory && itemCategory.map((element,index)=>{
+                return (
+                    <div>
+                    <img src={element.image} onClick={()=>{
+                        navgate(`/product/${element._id}`)  
+                    }}/>
+                    <p>{element.title}</p>
+                    </div>
+                )
+            })}
             </div>
         </div>)
 }

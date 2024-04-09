@@ -8,11 +8,13 @@ import {
     MDBContainer,
     MDBRow,
     MDBCol,
+    MDBIcon,
     MDBInput
 }
-    from 'mdb-react-ui-kit';
-
+from 'mdb-react-ui-kit';
+import { Link } from "react-router-dom";
 const Login = () => {
+
 
     const navigateHome = useNavigate();
 
@@ -38,26 +40,54 @@ const Login = () => {
                 setMessage(error.response?.data.message)
             })
     }
+
+
+
     return (
         
-            <div className="inputLogin">
-                <div className="text-center">
-                    <img src='https://mostaql.hsoubcdn.com/uploads/thumbnails/1290811/6234bd2a2eaf1/%D8%B4%D8%B9%D8%A7%D8%B1-%D8%AA%D8%B3%D9%88%D9%82-1-.jpg'
-                        style={{ width: '300px',margin:"10px" }} alt="logo"/>
-                    <h4 className="mt-1 mb-5 pb-1">Shop Smartly</h4>
-                </div>
-                <p>Please login to your account</p>
-                <input type="email" placeholder="Email" onChange={(e) => {
-                    setEmail(e.target.value)
-                }}></input>
-                <input type="password" placeholder="Password " onChange={(e) => {
-                    setPassword(e.target.value)
-                }}></input>
-                <button className="btn_Login" onClick={login_1}>Login</button>
-                {message && <p>{message}</p>}
-            </div>
+            <MDBContainer fluid>
+                <MDBRow>
+
+                    <MDBCol sm='6'>
+
+                        <div className='d-flex flex-row ps-5 pt-5'>
+                            <MDBIcon fas icon="crow fa-3x me-3" style={{ color: '#709085' }} />
+                            <img src='https://mostaql.hsoubcdn.com/uploads/thumbnails/1290811/6234bd2a2eaf1/%D8%B4%D8%B9%D8%A7%D8%B1-%D8%AA%D8%B3%D9%88%D9%82-1-.jpg'
+                                style={{ width: '250px', marginLeft: "-15px" }} alt="logo" />
+                        </div>
+
+                        <div className='d-flex flex-column justify-content-center h-custom-2 w-75 pt-4'>
+
+
+                            <p  className="small mb-5 pb-lg-3 ms-5" >Please login to your account</p>
+                            <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Email address' id='formControlLg' type='email' size="lg"
+                            onChange={(e) => {
+                                setEmail(e.target.value)
+                            }} />
+                            <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Password' id='formControlLg' type='password' size="lg"
+                            onChange={(e) => {
+                                setPassword(e.target.value)
+                            }} />
+
+                            <MDBBtn className="mb-4 px-5 mx-5 w-100" color='info' size='lg' onClick={login_1}>Login</MDBBtn>
+                            {message && <p>{message}</p>} 
+                            <p className="small mb-5 pb-lg-3 ms-5"><a class="text-muted" href="#!">Forgot password?</a></p>
+                            <p className='ms-5'>Don't have an account? <Link  to="/Register">Register here</Link></p>
+                            
+
+                        </div>
+
+                    </MDBCol>
+
+
+
+                </MDBRow>
+
+            </MDBContainer>
         
-    )
+    );
 }
 
 export default Login;
+
+
