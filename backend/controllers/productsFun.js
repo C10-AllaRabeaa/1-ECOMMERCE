@@ -42,7 +42,7 @@ const getAllProduct = (req, res) => {
 
 
 const getProductByCategory = (req, res) => {
-    const productByCategory = req.query.category
+    const productByCategory = req.params.id
 
     ProductModel.find({ category: productByCategory })
 

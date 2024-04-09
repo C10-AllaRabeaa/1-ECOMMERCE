@@ -11,7 +11,7 @@ productRouter.post('/',creatProduct)
 
 productRouter.get('/allproduct',authentication,getAllProduct)
 
-productRouter.get("/product/search_1",authentication,getProductByCategory)
+productRouter.get("/category/:id",getProductByCategory)
 
 productRouter.get('/search_2/:id',authentication,getProductById)
 

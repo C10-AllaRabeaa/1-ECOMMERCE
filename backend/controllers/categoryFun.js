@@ -28,7 +28,7 @@ const getAllCategory = (req,res)=>{
         res.json({
           success: true,
           message: "All the Category",
-          User: result
+          category: result
         })
       })
       .catch((error) => {
