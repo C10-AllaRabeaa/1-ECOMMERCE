@@ -42,7 +42,6 @@ const Login = () => {
     }
 
 
-
     return (
         
             <MDBContainer fluid>
@@ -57,7 +56,6 @@ const Login = () => {
                         </div>
 
                         <div className='d-flex flex-column justify-content-center h-custom-2 w-75 pt-4'>
-
 
                             <p  className="small mb-5 pb-lg-3 ms-5" >Please login to your account</p>
                             <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Email address' id='formControlLg' type='email' size="lg"
@@ -83,7 +81,7 @@ const Login = () => {
 
                 </MDBRow>
 
-            </MDBContainer>
+            </MDBContainer >
         
     );
 }
