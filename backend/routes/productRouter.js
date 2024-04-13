@@ -13,7 +13,7 @@ productRouter.get('/allproduct',authentication,getAllProduct)
 
 productRouter.get("/category/:id",getProductByCategory)
 
-productRouter.get('/search_2/:id',authentication,getProductById)
+productRouter.get('/item/:id',getProductById)
 
 productRouter.put('updateproduct/:id',authentication,updateProductById)
 

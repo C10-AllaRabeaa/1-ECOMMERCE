@@ -3,6 +3,8 @@ import axios from "axios";
 
 import { useNavigate } from "react-router-dom";
 
+import "./style.css"
+
 const Home = () => {
 
 const [itemCategory, setItemCategory]= useState()
@@ -24,10 +26,10 @@ const navgate = useNavigate();
     return (
         <div>
         
-            <div>
+            <div >
             {itemCategory && itemCategory.map((element,index)=>{
                 return (
-                    <div>
+                    <div key={index}>
                     <img src={element.image} onClick={()=>{
                         navgate(`/product/${element._id}`)  
                     }}/>

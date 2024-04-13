@@ -27,7 +27,7 @@ function Product() {
   return (
     <div>{product && product.map((element, index) => {
       return (
-        <div>
+        <div key={index}>
           <img src={element.imageProduct} onClick={() => {
             navegat(`/data/${element._id}`)
           }} />

@@ -11,6 +11,10 @@ const Navbar = () => {
             
                 <Link className="textNav" to="/Home">Home</Link>
 
+        
+
+
+
                 
 
         </div>

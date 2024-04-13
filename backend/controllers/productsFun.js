@@ -75,7 +75,7 @@ const getProductByCategory = (req, res) => {
 }
 
 const getProductById = (req, res) => {
-    const categoryById = erq.params.id;
+    const categoryById = req.params.id;
     console.log(categoryById);
     ProductModel.findById(categoryById)
         //question use result or arcicals
@@ -84,15 +84,15 @@ const getProductById = (req, res) => {
             res.status(200)
             res.json({
                 success: true,
-                massage: `The Category ${id}`,
+                massage: `The Category ${categoryById}`,
                 resulte: resulte
-            }).catch((error) => {
-                res.status(500)
-                res.json({
-                    success: false,
-                    message: "Server Error",
-                    error: error.message
-                })
+            })
+        }).catch((error) => {
+            res.status(500)
+            res.json({
+                success: false,
+                message: "Server Error",
+                error: error.message
             })
         })
 }
