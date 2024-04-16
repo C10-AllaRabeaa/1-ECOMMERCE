@@ -106,7 +106,7 @@ const updateUserById = (req, res) => {
         .then((result) => {
             res.status(201).json({
                 success: true,
-                message: `Comment added`,
+                message: `item added from favorites`,
                 comment: result,
             });
         })
@@ -136,7 +136,7 @@ const delateUserById = (req, res) => {
         .then((result) => {
             res.status(201).json({
                 success: true,
-                message: `Comment added`,
+                message: `item removed from favorites`,
                 comment: result,
             });
         })
@@ -149,7 +149,31 @@ const delateUserById = (req, res) => {
         })
 };
 
-module.exports = { creatUser, getAllUsers, login, updateUserById ,delateUserById}
+
+const getuserById = (req, res) => {
+    const userById = req.params.id;
+    console.log(userById);
+    userModel.findById(userById)
+        //question use result or arcicals
+        .then((resulte) => {
+            console.log(resulte);
+            res.status(200)
+            res.json({
+                success: true,
+                massage: `The User ${userById}`,
+                resulte: resulte
+            })
+        }).catch((error) => {
+            res.status(500)
+            res.json({
+                success: false,
+                message: "Server Error",
+                error: error.message
+            })
+        })
+}
+
+module.exports = { creatUser, getAllUsers, login, updateUserById ,delateUserById,getuserById}
 
 
 

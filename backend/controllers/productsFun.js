@@ -21,6 +21,7 @@ const creatProduct = (req, res) => {
 
 const getAllProduct = (req, res) => {
     ProductModel.find()
+    //.populate("category")
         .then((result) => {
             console.log(result);
             res.status(200)
@@ -45,7 +46,7 @@ const getProductByCategory = (req, res) => {
     const productByCategory = req.params.id
 
     ProductModel.find({ category: productByCategory })
-
+    
         .then((category) => {
             console.log("result with Product By Category >>", category);
             if (category.length > 0) {
