@@ -1,0 +1,45 @@
+/* Container styling */
+.containerP {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Image styling */
+.containerP img {
+    width: 200px; /* Adjust image width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Add space between image and text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: transform 0.3s ease; /* Add smooth hover effect */
+}
+
+.containerP img:hover {
+    transform: scale(1.1); /* Scale image on hover */
+}
+
+/* Text styling */
+.containerP p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+}
+
+/* Back button styling */
+.containerP .btnfav {
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.containerP .btnfav:hover {
+    background-color: #0056b3;
+}

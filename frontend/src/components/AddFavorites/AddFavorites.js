@@ -17,8 +17,8 @@ const AddFavorites = () => {
     useEffect(() => {
         axios.get(`http://localhost:5000/user/by/${id}`)
             .then((resulte) => {
-                console.log(resulte.data);
-                setItemFavorati(resulte.data);
+                console.log(resulte.data.result.favorite);
+                setItemFavorati(resulte.data.result.favorite);
             })
             .catch((error) => {
                 console.log(error);

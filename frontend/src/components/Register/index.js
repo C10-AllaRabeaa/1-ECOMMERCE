@@ -14,7 +14,7 @@ const Register = () => {
     const [country, setCountry] = useState()
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
-    const [isLoading, setIsLoading] = useState(false);
+
 
 
     const submited = () => {
@@ -24,7 +24,7 @@ const Register = () => {
         }else  {
             setMessage ("Registration successful.");
         }
-        setIsLoading(true);
+
 
         const data = { firstName, lastName, age, country, email, password }
 
@@ -36,11 +36,7 @@ const Register = () => {
                 console.log((error));
                 setMessage(error.response.data.message)
             })
-            .finally(() => {
-                setTimeout(() => {
-                    setIsLoading(false);
-                }, 3000);
-            });
+            
     }
 
     return (
@@ -65,14 +61,9 @@ const Register = () => {
                 <input type="password" placeholder="Password " onChange={(e) => {
                     setPassword(e.target.value)
                 }}></input>
-                <button onClick={submited} disabled={isLoading}> {isLoading ? <span>Loading...</span> : <span>Register</span>}</button>
-                {isLoading && (
-                    <div className="loading-container">
-                        <div className="loading-circle"></div>
-                    </div>
-                )}
+                <button onClick={submited}>Register</button>
+                
                 {message && <p>{message}</p>}
-
             </div>
         </div>
     )

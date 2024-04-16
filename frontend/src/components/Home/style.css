@@ -1,6 +1,35 @@
-img{
-    width: 300px;
-    height: 300px;
-    border-radius: 20px;
+.container {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px; 
+    padding: 20px;
+    justify-content: center; 
 }
 
+.item {
+   width: 40%;
+   display: grid;
+   grid-template-columns: 1fr ;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+}
+
+.item img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover;
+    margin-bottom: 10px; /* Add space between image and text */
+}
+
+.img:hover {
+    transform: translateY(-5px);
+}
+
+.item p {
+    margin: 0; /* Remove default margin */
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}

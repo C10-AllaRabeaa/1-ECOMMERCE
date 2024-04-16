@@ -24,9 +24,9 @@ const navgate = useNavigate();
     });
 
     return (
-        <div>
+        <div className="container">
         
-            <div >
+            <div className="item">
             {itemCategory && itemCategory.map((element,index)=>{
                 return (
                     <div key={index}>

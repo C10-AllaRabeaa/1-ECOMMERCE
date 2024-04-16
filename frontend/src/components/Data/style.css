@@ -1,0 +1,49 @@
+
+.containere {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+
+.containere img {
+    width: 300px; 
+    height: auto; 
+    margin-bottom: 20px; 
+}
+
+/* Text styling */
+.containere p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #d30e15;
+    text-align: center;
+}
+
+
+.containere button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.containere button:hover {
+    background-color: #0056b3;
+}
+
+
+.containere .btnfav {
+    background-color: #ccc;
+    color: #333;
+}
+
+.containere .btnfav:hover {
+    background-color: #bbb;
+}

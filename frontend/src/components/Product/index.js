@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+import "./style.css"
+
 function Product() {
 
   const { id } = useParams();
@@ -25,6 +27,7 @@ function Product() {
       })
   });
   return (
+    <div className='containerP'>
     <div>{product && product.map((element, index) => {
       return (
         <div key={index}>
@@ -38,6 +41,7 @@ function Product() {
     {<button className="btnfav" onClick={() => {
       navegat(`/`)
   }}>Back</button>}
+    </div>
     </div>
   )
 }

@@ -54,20 +54,20 @@ const Login = () => {
 
                             <div className="inputRegister">
                             <p  className="" >Please login to your account</p>
-                            <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Email address' id='formControlLg' type='email' size="lg"
+                            <MDBInput wrapperClass='' label='Email address' id='formControlLg' type='email' size="lg"
                             onChange={(e) => {
                                 setEmail(e.target.value)
                             }} />
-                            <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Password' id='formControlLg' type='password' size="lg"
+                            <MDBInput wrapperClass='' label='Password' id='formControlLg' type='password' size="lg"
                             onChange={(e) => {
                                 setPassword(e.target.value)
                             }} />
 
-                            <MDBBtn className="mb-4 px-5 mx-5 w-100" color='info' size='lg' onClick={login_1}>Login</MDBBtn>
+                            <MDBBtn className="" color='info' size='lg' onClick={login_1}>Login</MDBBtn>
                             {message && <p>{message}</p>} 
-                            <p className="small mb-5 pb-lg-3 ms-5"><a class="text-muted" href="#!">Forgot password?</a></p>
+                            <p className=""><a class="text-muted" href="#!">Forgot password?</a></p>
                             
-                            <p className='ms-5'>Don't have an account? <Link  to="/Register">Register here</Link></p>
+                            <p className=''>Don't have an account? <Link  to="/Register">Register here</Link></p>
                             </div>
                             
 
