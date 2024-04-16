@@ -4,20 +4,21 @@ import { useParams } from "react-router-dom"
 import { UserContex } from "../../App"
 import { useNavigate } from "react-router-dom";
 
-const Data = () => {
+const AddFavorites = () => {
 
     const { id } = useParams();
-    const [itemData, setItemData] = useState(null)
+
+    const [itemFavorati, setItemFavorati] = useState(null)
 
     const { token } = useContext(UserContex)
 
     const navgate = useNavigate();
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/product/item/${id}`)
+        axios.get(`http://localhost:5000/user/by/${id}`)
             .then((resulte) => {
-                console.log(resulte.data.resulte);
-                setItemData(resulte.data.resulte);
+                console.log(resulte.data);
+                setItemFavorati(resulte.data);
             })
             .catch((error) => {
                 console.log(error);
@@ -26,20 +27,20 @@ const Data = () => {
 
     return (
         <div>
-            {itemData && itemData.imageProduct && (
-                <img src={itemData.imageProduct} />
+            {itemFavorati && itemFavorati.imageProduct && (
+                <img src={itemFavorati.imageProduct} />
             )}
             <div>
-                {itemData && <p> Name Product : {itemData.nameProduct}</p>}
+                {itemFavorati && <p> Name Product : {itemFavorati.nameProduct}</p>}
 
-                {itemData && <p>Description Product : {itemData.descriptionProduct}</p>}
+                {itemFavorati && <p> Description Product : {itemFavorati.descriptionProduct}</p>}
 
-                {itemData && <p>Price Product : {itemData.priceProduct} $</p>}
+                {itemFavorati && <p>Price Product : {itemFavorati.priceProduct} $</p>}
 
-                {itemData?.nameBrand && <p> Name Brand :{itemData.nameBrand}</p>}
+                {itemFavorati?.nameBrand && <p> Name Brand :{itemFavorati.nameBrand}</p>}
 
 
-                {itemData?.colorsProduct.length ? <p> Colors : {itemData.colorsProduct.map((element, index) => {
+                {itemFavorati?.colorsProduct.length ? <p> Colors : {itemFavorati.colorsProduct.map((element, index) => {
                     return (
                         <button key={index} style={{ backgroundColor: `${element}`, height: "20px", width: "35px" }}></button>
                     )
@@ -47,7 +48,7 @@ const Data = () => {
 
 
 
-                {itemData?.sizeProduct.length ? <p> Size : {itemData.sizeProduct.map((elem, i) => {
+                {itemFavorati?.sizeProduct.length ? <p> Size : {itemFavorati.sizeProduct.map((elem, i) => {
                     return (
                         <div>
                             <p>{elem}</p>
@@ -55,14 +56,14 @@ const Data = () => {
                     )
                 })}</p>:<></>}
 
-                {itemData?.producingCountry && <p> Country :{itemData.producingCountry}</p>}
+                {itemFavorati?.producingCountry && <p> Country :{itemFavorati.producingCountry}</p>}
 
 
 
                 {/* itemData?.category && <p>Category : {itemData.category}</p> */}
 
                 {<button className="btnfav" onClick={() => {
-                    axios.put(`http://localhost:5000/user/add/favoratie/${id}`,
+                    axios.delete(`http://localhost:5000/user/delate/favoratie/${id}`,
 
                         {},
 
@@ -76,7 +77,7 @@ const Data = () => {
                             console.log(error);
                            
                         })
-                }}>Add To Favorites</button>}
+                }}>Delete the product</button>}
                 <br></br>
                 <div>
                     {<button className="btnfav" onClick={() => {
@@ -90,9 +91,6 @@ const Data = () => {
     )
 }
 
-export default Data;
-
-
-
+export default AddFavorites;
 
 

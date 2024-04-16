@@ -7,7 +7,7 @@ import Login from './components/Login';
 import Home from './components/Home';
 import Product from './components/Product'
 import Data from './components/Data/Data';
-
+import AddFavorites from './components/AddFavorites/AddFavorites';
 
 import { Routes, Route, Link } from 'react-router-dom';
 
@@ -26,11 +26,13 @@ const App = () => {
       <Navbar />
       
       <Routes>
+      <Route path='/' element={<Home />} />
       <Route path='/Register' element={<Register />} />
       <Route path='/Login' element={<Login />} />
-      <Route path='/Home' element={<Home />} />
       <Route path='/product/:id' element={<Product />} />
       <Route path='/data/:id' element={<Data />} />
+
+      <Route path='/AddFavorites/:id' element={<AddFavorites />} />
       
       </Routes>
     </UserContex.Provider>

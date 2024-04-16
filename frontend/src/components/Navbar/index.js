@@ -9,7 +9,9 @@ const Navbar = () => {
 
                 <Link className="textNav" to="/Login">Login</Link>
             
-                <Link className="textNav" to="/Home">Home</Link>
+                <Link className="textNav" to="/">Home</Link>
+
+                <Link className="textNav" to="/AddFavorites/:id">Favorites</Link>
 
         
 

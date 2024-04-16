@@ -37,6 +37,7 @@ const navgate = useNavigate();
                     </div>
                 )
             })}
+
             </div>
         </div>)
 }

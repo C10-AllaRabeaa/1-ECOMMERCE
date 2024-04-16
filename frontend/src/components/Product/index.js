@@ -35,6 +35,9 @@ function Product() {
         </div>
       )
     })}
+    {<button className="btnfav" onClick={() => {
+      navegat(`/`)
+  }}>Back</button>}
     </div>
   )
 }
