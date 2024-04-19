@@ -5,6 +5,7 @@
     align-items: center;
     flex-direction: column;
     padding: 20px;
+    background-color: #ac8d8f;
 }
 
 
@@ -18,7 +19,7 @@
 .containere p {
     margin: 10px 0;
     font-size: 18px;
-    color: #d30e15;
+    color: #130102;
     text-align: center;
 }
 

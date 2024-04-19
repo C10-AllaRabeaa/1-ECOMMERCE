@@ -21,15 +21,14 @@ const navgate = useNavigate();
             console.log(error);
 
         })
-    });
+    },[]);
 
     return (
         <div className="container">
-        
-            <div className="item">
+            <div className="columns">
             {itemCategory && itemCategory.map((element,index)=>{
                 return (
-                    <div key={index}>
+                    <div className="column" key={index}>
                     <img src={element.image} onClick={()=>{
                         navgate(`/product/${element._id}`)  
                     }}/>

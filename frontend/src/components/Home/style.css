@@ -1,35 +1,46 @@
-.container {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    gap: 20px; 
-    padding: 20px;
+.container{
+    position: relative;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://res.cloudinary.com/diuwwiwqs/image/upload/v1713561518/3333_y4x1iv.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    width: 100vw; 
+    height: 100vh; /* This value has been changed to make the background cover the entire page */
+    display: flex;
     justify-content: center; 
-}
-
-.item {
-   width: 40%;
-   display: grid;
-   grid-template-columns: 1fr ;
-}
-
-.item:hover {
-    transform: translateY(-5px);
-}
-
-.item img {
+    align-items: center;
+  }
+  
+  .columns {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+    
+  }
+  
+  .column {
+    width: 30%;
+    margin-bottom: 20px;
+    padding: 4px;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+  
+  .column img {
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover;
-    margin-bottom: 10px; /* Add space between image and text */
-}
+    height: 100%;
+    
+    border-radius: 20px;
+    border: 3px black solid;
+    
+  }
 
-.img:hover {
-    transform: translateY(-5px);
-}
-
-.item p {
-    margin: 0; /* Remove default margin */
+  p{
     text-align: center;
-    font-size: 16px;
-    color: #333;
-}
+    font-size: larger;
+  }    

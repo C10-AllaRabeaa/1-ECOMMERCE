@@ -28,9 +28,9 @@ function Product() {
   });
   return (
     <div className='containerP'>
-    <div>{product && product.map((element, index) => {
+    <div className='cc'>{product && product.map((element, index) => {
       return (
-        <div key={index}>
+        <div className='pp' key={index}>
           <img src={element.imageProduct} onClick={() => {
             navegat(`/data/${element._id}`)
           }} />
@@ -46,4 +46,4 @@ function Product() {
   )
 }
 
-export default Product
+export default Product;

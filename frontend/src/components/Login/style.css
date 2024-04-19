@@ -7,11 +7,11 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; 
-    width: 98vw; /* Full width of the viewport */
-    height: 96vh; /* Full height of the viewport */
+    width: 98vw; 
+    height: 96vh; 
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center; 
+    align-items: center; 
 }
 
 .inputlogin {
