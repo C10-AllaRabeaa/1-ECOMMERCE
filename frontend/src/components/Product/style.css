@@ -1,48 +1,56 @@
-/* Container styling */
-.containerP {
+.containerA {
+    position: relative;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://res.cloudinary.com/diuwwiwqs/image/upload/v1713634681/9696_obzstd.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .columnsA {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background-color: #b68a8a;
     
-}
+  }
 
-/* Image styling */
-.containerP img {
-    width: 200px; /* Adjust image width */
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: 10px; /* Add space between image and text */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    transition: transform 0.3s ease; /* Add smooth hover effect */
-}
+  .columnA {
+    
+    width: 30%;
+    padding: 4px;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
 
-.containerP img:hover {
-    transform: scale(1.1); /* Scale image on hover */
-}
+  .columnA img {
+    
+    margin-top: 5px;
+    width: 80%; /* Adjusted width */
+    height: 70%;
+    border-radius: 20px;
+    border: 3px black solid;
+    
+  }
 
-/* Text styling */
-.containerP p {
-    margin: 5px 0;
-    font-size: 16px;
-    color: #333;
+  p{
     text-align: center;
-}
+    font-size: larger;
+    color: blue;
+  }
 
-/* Back button styling */
-.containerP .btnfav {
+  .btnfav {
+    margin: 10px;
     padding: 10px 20px;
-    margin-top: 20px;
-    border: none;
+    border: 2px black solid;
     border-radius: 5px;
     background-color: #007bff;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-.containerP .btnfav:hover {
-    background-color: #0056b3;
-}
-
+  }

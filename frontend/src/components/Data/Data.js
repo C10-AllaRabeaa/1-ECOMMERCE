@@ -26,8 +26,8 @@ const Data = () => {
     }, [id]);
 
     return (
-       <div className="containere">
-       <div>
+       <div className="Data">
+       <div className="ImageData">
        {itemData && itemData.imageProduct && (
            <img src={itemData.imageProduct} />
        )}

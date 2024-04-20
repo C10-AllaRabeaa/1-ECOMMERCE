@@ -1,50 +1,73 @@
-
-.containere {
+.Data {
+    
+    margin-top: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    padding: 20px;
-    background-color: #ac8d8f;
-}
-
-
-.containere img {
-    width: 300px; 
-    height: auto; 
-    margin-bottom: 20px; 
-}
-
-/* Text styling */
-.containere p {
-    margin: 10px 0;
-    font-size: 18px;
-    color: #130102;
-    text-align: center;
-}
-
-
-.containere button {
-    padding: 10px 20px;
-    margin-top: 20px;
-    border: none;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  .ImageData {
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .ImageData img {
+    width: 300px;
+    height: auto;
+    margin-right: 20px;
     border-radius: 5px;
-    background-color: #007bff;
+    border: 3px black solid;
+    margin-left: 10px;
+  }
+  
+  .ImageData div {
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .ImageData p {
+    
+    color: #333;
+  }
+  
+  .btnfav {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    background-color: #6fa4dc;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-.containere button:hover {
-    background-color: #0056b3;
-}
-
-
-.containere .btnfav {
-    background-color: #ccc;
+  }
+  
+  .btnfav:hover {
+    background-color: #2f373f;
+  }
+  
+  .btnfav:focus {
+    outline: none;
+  }
+  
+  .btnBack {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 2px solid #06e2d0;
+    border-radius: 5px;
+    background-color: #fff;
     color: #333;
-}
-
-.containere .btnfav:hover {
-    background-color: #bbb;
-}
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btnBack:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .btnBack:focus {
+    outline: none;
+  }

@@ -8,9 +8,9 @@ import "./style.css"
 function Product() {
 
   const { id } = useParams();
- // console.log(id);
+  // console.log(id);
 
-  const navegat = useNavigate()
+  const navigate = useNavigate()
 
   const [product, setProduct] = useState(null)
 
@@ -27,23 +27,24 @@ function Product() {
       })
   });
   return (
-    <div className='containerP'>
-    <div className='cc'>{product && product.map((element, index) => {
-      return (
-        <div className='pp' key={index}>
-          <img src={element.imageProduct} onClick={() => {
-            navegat(`/data/${element._id}`)
-          }} />
-          <p>{element.nameProduct}</p>
-        </div>
-      )
-    })}
-    {<button className="btnfav" onClick={() => {
-      navegat(`/`)
-  }}>Back</button>}
+    <div className='containerA'>
+      <div className='columnsA'>
+        {product && product.map((element, index) => (
+          <div className='columnA' key={index}>
+            <img src={element.imageProduct} alt={element.nameProduct} onClick={() => {
+              navigate(`/data/${element._id}`);
+            }} />
+            <p>{element.nameProduct}</p>
+          </div>
+        ))}
+      </div>
+      <div>
+        <button className="btnfav" onClick={() => {
+          navigate(`/`);
+        }}>Back</button>
+      </div>
     </div>
-    </div>
-  )
+  );
 }
 
 export default Product;
